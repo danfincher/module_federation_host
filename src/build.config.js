@@ -31,7 +31,7 @@ builder.addPlugin(new ModuleFederationPlugin({
         /*
             We must support flighting, different environments, etc. 
             e.g. What happens if the extension being built needs to use a federated module, but the remote is not available in the environment it is being built in?
-            Or, if the remote uses an API that needs to match the environment it is being used in?
+            Or, if the remote uses an API that needs to match the environment it is beicng used in?
             Or, if the remote is being flighted and the extension is not? Or vice versa?
 
             To make this dynamic: 
@@ -41,14 +41,14 @@ builder.addPlugin(new ModuleFederationPlugin({
         */
     }, 
     remoteType: "amd",
-    shared: {
-        react: {
-            singleton: true,
-            requiredVersion: "17.0.2",
-        },
-        "react-dom": {
-            singleton: true,
-            requiredVersion: "17.0.2",
-        },
-    }
+    // shared: {
+    //     react: {
+    //         singleton: true,
+    //         requiredVersion: "17.0.2",
+    //     },
+    //     "react-dom": {
+    //         singleton: true,
+    //         requiredVersion: "17.0.2",
+    //     },
+    // }
 }));
