@@ -1,0 +1,126 @@
+{
+  "$schema": "../node_modules/@microsoft/azureportal-build/lib/definitions/dx.schema.json",
+  "stringSource": "./ResourceAssetStrings.resjson",
+  "assetType": {
+    "name": "MyResource",
+    "resourceType": {
+      "name": "Providers.Test/statefulIbizaEngines",
+      "apiVersion": "2014-04-01"
+    },
+    "displayNames": {
+      "singular": "ResourceAssetStrings.assetTypeNamesResourceSingular",
+      "plural": "ResourceAssetStrings.assetTypeNamesResourcePlural",
+      "lowerSingular": "ResourceAssetStrings.assetTypeNamesResourceLowerSingular",
+      "lowerPlural": "ResourceAssetStrings.assetTypeNamesResourceLowerPlural"
+    },
+    "description": "ResourceAssetStrings.assetTypeDescription",
+    "keywords": "ResourceAssetStrings.assetTypeKeywords",
+    "icon": "CloudService",
+    "links": [
+      {
+        "title": "ResourceAssetStrings.assetTypeLink1Title",
+        "uri": "https://aka.ms/portalfx/designpatterns"
+      },
+      {
+        "title": "ResourceAssetStrings.assetTypeLink2Title",
+        "uri": "https://aka.ms/portalfx/browse"
+      }
+    ],
+    "part": {
+      "builtIn": "ResourcePart"
+    },
+    "create": {
+      "blade": {
+        "name": "CreateForm_dx"
+      }
+    },
+    "browse": {
+      "type": "ResourceType",
+      "selectionCommands": [
+        {
+          "kind": "DeleteSelectionCommand",
+          "id": "deleteSelectionCommand",
+          "displayName": "ResourceAssetStrings.delete",
+          "icon": "Delete",
+          "confirmation": {
+            "title": "ResourceAssetStrings.deleteResourcesTitle",
+            "message": "ResourceAssetStrings.deleteConfirmation",
+            "explicitConfirmationText": "ResourceAssetStrings.yes"
+          },
+          "definitions": [
+            {
+              "apiVersion": "2014-04-01"
+            }
+          ]
+        }
+      ]
+    },
+    "menu": {
+      "overview": {
+        "displayName": "ResourceAssetStrings.overview",
+        "icon": "CloudService",
+        "id": "resourceOverviewId",
+        "keywords": "ResourceAssetStrings.overviewKeywords",
+        "blade": {
+          "name": "GetStartedOverviewWithEssentials_dx",
+          "parameters": {
+            "id": "{resourceId}"
+          }
+        }
+      },
+      "groups": [
+        {
+          "id": "MsPortalFx.Assets.ManagementGroupId",
+          "displayName": "ResourceAssetStrings.settings",
+          "items": [
+            {
+              "id": "mrsg_settings_item1",
+              "displayName": "ResourceAssetStrings.resourceSettingMenuItem1",
+              "icon": "Controls",
+              "blade": {
+                "name": "HelloWorld.ReactView"
+              }
+            }
+          ]
+        },
+        {
+          "displayName": "ResourceAssetStrings.menuGroup1",
+          "id": "mrsg_item1",
+          "items": [
+            {
+              "id": "mrsg_item1",
+              "displayName": "ResourceAssetStrings.item1",
+              "keywords": "ResourceAssetStrings.item1Keywords",
+              "blade": {
+                "name": "HelloWorld.ReactView"
+              },
+              "icon": "PolyResourceDefault"
+            },
+            {
+              "id": "mrsg_item2",
+              "displayName": "ResourceAssetStrings.item2",
+              "keywords": "ResourceAssetStrings.item2Keywords",
+              "blade": {
+                "name": "HelloWorld.ReactView"
+              },
+              "icon": "Toolbox"
+            }
+          ]
+        }
+      ],
+      "options": {
+        "enableAlerts": true,
+        "enableDiagnostics": true,
+        "enableExportTemplate": true,
+        "enableLogs": true,
+        "enableMetrics": true,
+        "enableProperties": true,
+        "enableRbac": true,
+        "enableTags": true,
+        "enableSupportTroubleshootV2": true,
+        "enableSupportResourceAdvisor": true,
+        "enableSupportResourceHealth": true
+      }
+    }
+  }
+}

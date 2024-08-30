@@ -1,0 +1,23 @@
+{
+    "ResourceAssetStrings.assetTypeDescription": "Consistent experiences across Azure enable users to leverage a few well-known and researched design patterns throughout Azure.",
+    "ResourceAssetStrings.assetTypeKeywords": "UX UI design patterns sample extension ibiza consistency",
+    "ResourceAssetStrings.assetTypeLink1Title": "Get consistent",
+    "ResourceAssetStrings.assetTypeLink2Title": "Learn more",
+    "ResourceAssetStrings.assetTypeNamesResourceLowerPlural": "my resources",
+    "ResourceAssetStrings.assetTypeNamesResourceLowerSingular": "my resource",
+    "ResourceAssetStrings.assetTypeNamesResourcePlural": "My Resources",
+    "ResourceAssetStrings.assetTypeNamesResourceSingular": "My Resource",
+    "ResourceAssetStrings.delete": "Delete",
+    "ResourceAssetStrings.deleteConfirmation": "Are you sure you want to delete this resource?",
+    "ResourceAssetStrings.deleteResourcesTitle": "Delete resource(s)",
+    "ResourceAssetStrings.item1": "Item1",
+    "ResourceAssetStrings.item1Keywords": "one keyword1",
+    "ResourceAssetStrings.item2": "Item2",
+    "ResourceAssetStrings.item2Keywords": "two keyword2",
+    "ResourceAssetStrings.menuGroup1": "Resource-specific group",
+    "ResourceAssetStrings.overview": "Overview",
+    "ResourceAssetStrings.overviewKeywords": "Summary Home",
+    "ResourceAssetStrings.resourceSettingMenuItem1": "Important setting",
+    "ResourceAssetStrings.settings": "Settings",
+    "ResourceAssetStrings.yes": "yes"
+}

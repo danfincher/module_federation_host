@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "extends": "@microsoft/azureportal-build/tsconfig.webpack.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "paths": {
+      "*": [
+        "*"
+      ]
+    },
+    "types": [
+      "jest",
+      "@microsoft/azureportal-build"
+    ]
+  },
+  "exclude": [
+    "test-config/*"
+  ]
+}

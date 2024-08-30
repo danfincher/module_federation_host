@@ -1,0 +1,37 @@
+{
+  "$schema": "./src/node_modules/@microsoft/azureportal-build/lib/definitions/extension.config.schema.json",
+  "name": "mf_host",
+  "deployment": {
+    "generationType": "rp"
+  },
+  "devServer": {
+    "sideLoadTarget": {
+      "view": "HelloWorld.ReactView"
+    },
+    "port": 3001
+  },
+  "environment": {
+    "deepmergeProperties": [
+      "ArgBrowseOptions",
+      "features"
+    ],
+    "*": {
+      "enablePortalLogging": true,
+      "armApiVersion": "2014-04-01",
+      "reflowReadyDefault": true,
+      "trustedDomains": [],
+      "argbrowseoptions": {
+        "MyResource": "Force"
+      }
+    },
+    "df.onecloud.azure-test.net": {},
+    "onestb.cloudapp.net": {},
+    "portal.azure.cn": {},
+    "portal.azure.com": {
+      "features": {
+        "regionSegments": true
+      }
+    },
+    "portal.azure.us": {}
+  }
+}
