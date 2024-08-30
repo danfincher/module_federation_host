@@ -8,9 +8,10 @@ Az.setTitle(HelloWorldStrings.HelloWorldTitle);
 
 const HelloWorld = () => {
 
+    // Might have to create an API to handle this not returning anything?
+    // Or could just make this no-op from Bootstrap
     const SharedComponent = React.lazy(() => import("remoteTest2000/SharedComponent").then(module => ({ default: module.SharedComponent })));
 
-    
     return (
         <>
             <Text data-testid="helloworld-text-testid">{HelloWorldStrings.HelloWorldMessage}</Text>;
