@@ -4,6 +4,25 @@ import { Text } from "@fluentui/react/lib/Text";
 import { HelloWorldStrings } from "./HelloWorldStrings.resjson";
 
 
+/*
+
+Try this for dynamic support
+
+import { loadRemoteEntry } from '@module-federation/utilities';
+
+const RemoteMarkup = React.lazy(() => 
+  loadRemoteEntry({
+    type: 'amd', // Specify that the remote should be AMD
+    remoteEntry: 'http://localhost:3001/remoteEntry.js',
+  }).then(() => import('markup/Markup'))
+);
+
+
+Seems that the @module-federation/utilities library is replaced with the runtime library @module-federation/runtime
+https://www.npmjs.com/package/@module-federation/utilities
+
+*/
+
 Az.setTitle(HelloWorldStrings.HelloWorldTitle);
 
 const HelloWorld = () => {
