@@ -10,6 +10,16 @@
     },
     "port": 3001
   },
+  "build": {
+    "moduleFederation": [{
+      "name": "host",
+      "remotes": {        
+        "myRemote1": "remoteTest1",
+        "myRemote2": "remoteTest2",
+        "myRemote3": "remoteTest3"
+      }
+    }]
+  },
   "environment": {
     "deepmergeProperties": [
       "ArgBrowseOptions",
@@ -22,9 +32,18 @@
       "trustedDomains": [],
       "argbrowseoptions": {
         "MyResource": "Force"
+      },
+      "moduleMappings": {
+        "remoteTest1": "https://localhost:3000/mfremote/Content/0.0.0/remoteEntry1.js",
+        "remoteTest3": null,
+        "remoteTest2": null
       }
     },
-    "df.onecloud.azure-test.net": {},
+    "df.onecloud.azure-test.net": {
+      "moduleMappings": {
+        "remoteTest2": "https://localhost:3000/mfremote/Content/0.0.0/remoteEntry2.js"
+      }
+    },
     "onestb.cloudapp.net": {},
     "portal.azure.cn": {},
     "portal.azure.com": {
