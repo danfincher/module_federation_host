@@ -8,34 +8,30 @@ Az.setTitle(HelloWorldStrings.HelloWorldTitle);
 
 const HelloWorld = () => {
 
-  // Should we always deep merge the moduleMappings? Assuming that it works by the specific environment overriding the * value. If we deep merged, then all possible remote keys 
-  // would be available in bootstrap. Then, we can check if the value is null, and then no-op it, rather having a require error
-  // Should the no-op federated module have something in it? Or should it just be an empty function?
+  // This is testing fallback behavior. To test in browser, block the request to load myRemote1 (remoteTest1)  
+  // Remote is defined in * so its available in all environments
+  const SharedComponent1 = React.lazy(() => import("myRemote1/SharedComponent1").then(module => ({ default: module?.SharedComponent1 ?? (() => <div>fallback module loaded</div>) })));
 
-    // Create a wrapper that wraps this but also adds a catch and also handles when the module no-ops
-    const SharedComponent1 = React.lazy(() => import("myRemote1/SharedComponent1").then(module => ({ default: module.SharedComponent1 })));
+  // Remote is only defined in df, so this is only available in df. Therefore, this no-ops in all other environments
+  const SharedComponent2 = React.lazy(() => import("myRemote2/SharedComponent2").then(module => ({ default: module?.SharedComponent2 ?? (() => <div>Module no-oped because this module is not defined in this environment</div>) })));
 
-    // Only defined for DF - but specifically marked as null in config. Is there a better way to have to explicitly mark this as null?
-    // Could conditionally load this based on getting the value from the environment (moduleMappings) and checking if the key exists?
-    const SharedComponent2 = React.lazy(() => import("myRemote2/SharedComponent2").then(module => ({ default: module.SharedComponent2 })).catch(() => ({ default: () => <div>Failed to load component</div> })));
+  // Defined specifically as null in Mooncake. Otherwise, all other environments is implicitly null
+  const SharedComponent3 = React.lazy(() => import("myRemote3/SharedComponent3").then(module => ({ default: module?.SharedComponent3 ?? (() => <div>No module to load in this environment</div>) })));
 
-    // Defined as null for all environments
-    const SharedComponent3 = React.lazy(() => import("myRemote3/SharedComponent3").then(module => ({ default: module.SharedComponent3 })).catch(() => ({ default: () => <div>Failed to load component</div> })));
+  React.useEffect(() => {
+    console.log("env", getEnvironmentValue("moduleMappings"));
+  }, []);
 
-    React.useEffect(() => {
-      console.log("env", getEnvironmentValue("moduleMappings"));
-    }, []);
-
-    return (
-        <>
-            <Text data-testid="helloworld-text-testid">{HelloWorldStrings.HelloWorldMessage}</Text>;
-            <React.Suspense fallback={"loading..."}>
-                <SharedComponent1/>
-                <SharedComponent2/>
-                <SharedComponent3/>
-            </React.Suspense>
-        </>
-    );      
+  return (
+    <>
+      <Text data-testid="helloworld-text-testid">{HelloWorldStrings.HelloWorldMessage}</Text>
+      <React.Suspense fallback={"loading..."}>
+        <SharedComponent1 />
+        <SharedComponent2 />
+        <SharedComponent3 />
+      </React.Suspense>
+    </>
+  );
 };
 
 export default HelloWorld;
