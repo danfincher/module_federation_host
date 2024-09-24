@@ -6,9 +6,9 @@
   },
   "devServer": {
     "sideLoadTarget": {
-      "view": "HelloWorld.ReactView"
-    },
-    "port": 3001
+      "view": "HelloWorld.ReactView",
+      "baseUrl": "https://localhost:55555/Portal"
+    }
   },
   "build": {
     "moduleFederation": [{
@@ -23,7 +23,8 @@
   "environment": {
     "deepmergeProperties": [
       "ArgBrowseOptions",
-      "features"
+      "features",
+      "moduleMappings"
     ],
     "*": {
       "enablePortalLogging": true,
@@ -34,9 +35,7 @@
         "MyResource": "Force"
       },
       "moduleMappings": {
-        "remoteTest1": "https://localhost:3000/mfremote/Content/0.0.0/remoteEntry1.js",
-        "remoteTest3": null,
-        "remoteTest2": null
+        "remoteTest1": "https://localhost:3000/mfremote/Content/0.0.0/remoteEntry1.js"
       }
     },
     "df.onecloud.azure-test.net": {
@@ -45,12 +44,20 @@
       }
     },
     "onestb.cloudapp.net": {},
-    "portal.azure.cn": {},
+    "portal.azure.cn": {
+      "moduleMappings": {
+        "remoteTest3": null
+      }
+    },
     "portal.azure.com": {
       "features": {
         "regionSegments": true
+      },
+      "moduleMappings": {
+        "someKey": "someValue"
       }
     },
-    "portal.azure.us": {}
+    "portal.azure.us": {},
+    "localhost#55555": {}
   }
 }
