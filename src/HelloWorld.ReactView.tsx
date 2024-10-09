@@ -20,9 +20,22 @@ const SharedComponent3 = React.lazy(() => import("myRemote3/SharedComponent3").t
 
 const HelloWorld = () => {
 
+
+  // This method cannot work... Try data fetcher instead?
+  // const [sharedHook, setSharedHook] = React.useState(null);
+  // sharedHook && sharedHook();
+
+  // React.useEffect(() => {
+  //   import("myRemote1/SharedHook").then(sharedHookModule => {
+  //     console.log("sharedHook", sharedHookModule);
+  //     setSharedHook(() => sharedHookModule.default());
+  //   });
+  // }, []);
+
   React.useEffect(() => {
     console.log("env", getEnvironmentValue("moduleMappings"));
   }, []);
+
 
   return (
     <>
