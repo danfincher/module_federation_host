@@ -6,7 +6,7 @@
   "license": "ISC",
   "dependencies": {
     "@fluentui/react": "8.114.4",
-    "@microsoft/azureportal-reactview": "13.348.0",
+    "@microsoft/azureportal-reactview": "14.183.0",
     "external-remotes-plugin": "^1.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@fluentui/jest-serializer-merge-styles": "^8.0.31",
-    "@microsoft/azureportal-build": "file:E:\/workspace\/azureux3\/AzureUX-PortalFx\/src\/SDK\/Framework.ReactView\/azureportal-build",
+    "@microsoft/azureportal-build": "14.183.0",
     "@testing-library/react": "11.0.4",
     "@types/jest": "^29.5.12",
     "@types/react": "^17.0.53",
